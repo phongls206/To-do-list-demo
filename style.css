@@ -40,7 +40,8 @@ body {
 
 .todolist-head {
   height: 100%;
-  width: 100%;
+  max-height: 130px;
+  max-width: 100%;
   background-color: pink;
   border-radius: 20px;
   padding: 10px;

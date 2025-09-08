@@ -151,6 +151,8 @@ Clear.addEventListener("click", () => {
 // Mission:
 
 // loc task da hoan thanh
+//button tick all va bo tick all
 // button dropdown cac task da hoan thanh click vao hien cac task hoan thanh
+
 // neu hoan thanh se day xuong cuoi
 // dark mode
