@@ -22,15 +22,33 @@
       <div class="todolist-head">
         <div class="type-list">
           <textarea name="textarea" id="textarea"></textarea>
+
           <div class="todolist-act">
             <button type="submit">Add New</button>
             <button type="reset">Delete All</button>
           </div>
         </div>
       </div>
+
       <div class="todolist-main">
         <ul class="list-item"></ul>
       </div>
+    </div>
+    <audio id="music" controls loop>
+      <source src="./doremonmusic.mp3" type="audio/mpeg" />
+    </audio>
+    <div class="filter-btn">
+      <button class="btn-nav"><span>⚙️</span> Feature</button>
+      <ul class="filter-submenu">
+        <li class="all-btn">All Task</li>
+        <li class="completed-btn">Completed</li>
+        <li class="pending-btn">Pending</li>
+
+        <li class="checkAll-btn">Check All</li>
+        <li class="uncheckAll-btn">Uncheck All</li>
+
+        <li class="darkMode-btn">Dark Mode</li>
+      </ul>
     </div>
   </body>
 </html>

@@ -17,16 +17,16 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
-  background-image: url(./1362772.png);
+  background-image: url(./doremon.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: cursive;
 }
 
 .todolist-ui {
-  font-family: fantasy;
-  text-align: center;
+  position: relative;
+
   margin-left: 15%;
   width: 100%;
   max-width: 500px;
@@ -34,13 +34,14 @@ body {
   max-height: 600px;
   border-radius: 20px;
   scrollbar-width: none;
-  background-image: url(./1370523.png);
+  background-image: url(./nobita.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   overflow-y: auto;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  will-change: transform; /* báo trước cho trình duyệt */
   animation: uiShake 8s ease-in-out infinite alternate;
 }
 
@@ -83,11 +84,11 @@ body {
 h1 {
   position: absolute;
   color: white;
-  font-family: cursive;
+
   font-size: 30px;
   top: 0;
   letter-spacing: 5px;
-
+  will-change: transform; /* báo trước cho trình duyệt */
   animation: Sausage 3s linear infinite alternate;
   text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
     0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
@@ -145,7 +146,7 @@ h1 {
   font-size: 15px;
 }
 .list-item {
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   padding-top: 20px;
@@ -153,8 +154,7 @@ h1 {
   row-gap: 30px;
   font-size: 20px;
   list-style: none;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
   width: 100%;
   padding: 0 15px;
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #008ae6,
@@ -241,16 +241,16 @@ h1 {
   flex-direction: column;
 }
 .todolist-act button {
-  height: 27px;
+  height: 28px;
   text-wrap: nowrap;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   border-radius: 999px;
   border: none;
   padding: 50x;
-  font-size: 12px;
+  font-size: 13px;
   transition: transform 0.3s ease;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
   user-select: none;
 }
 
@@ -311,5 +311,123 @@ span {
 }
 
 ::-webkit-scrollbar-track {
+  display: none;
+}
+.todolist-main {
+  max-height: 480px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+#music {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+}
+.filter-btn {
+  position: fixed;
+  top: 0;
+  right: 20px;
+  border: none;
+  padding: 10px;
+}
+.filter-btn button {
+  padding: 8px;
+  text-shadow: #e0e0e0 1px 1px 0;
+  border: none;
+  border-radius: 99px;
+  background-color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+
+  text-wrap: nowrap;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  font-size: 18px;
+}
+.filter-btn span.rotate {
+  display: inline-block;
+  will-change: transform;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.filter-btn button:hover {
+  transform: scale(1.1);
+  background-color: #10adeb;
+  color: white;
+}
+.filter-btn button:active {
+  transform: scale(0.8);
+}
+
+.filter-submenu {
+  position: absolute;
+  font-size: 13.8px;
+  margin-top: 8px;
+  left: 5px;
+  padding: 20px;
+
+  background-color: white;
+  border-radius: 20px;
+  text-wrap: nowrap;
+  list-style: none;
+  letter-spacing: 1px;
+  display: none;
+  transform-origin: top;
+  transform: scaleY(0);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  user-select: none;
+
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.filter-submenu li {
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+.filter-btn .filter-submenu {
+  display: none;
+}
+.filter-btn:hover .filter-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-submenu li:hover {
+  text-decoration: underline;
+  color: rgb(9, 172, 242);
+  cursor: pointer;
+  list-style: none;
+  transform: scale(1.1);
+}
+.filter-submenu li:active {
+  transform: scale(0.7);
+}
+.filter-submenu.active {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transform: scaleY(1);
+  opacity: 1;
+}
+body.darkMode-active {
+  background-image: url(./doremon.svg);
+}
+.todolist-ui.darkMode-active {
+  background-image: url(./nobita.svg);
+}
+.hide {
   display: none;
 }
