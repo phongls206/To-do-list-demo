@@ -18,21 +18,27 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  background: linear-gradient(90deg, rgb(216, 124, 175), pink);
-  background-size: 300%;
+  background-image: url(./1362772.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .todolist-ui {
   font-family: fantasy;
   text-align: center;
-  margin: 0 auto;
+  margin-left: 15%;
   width: 100%;
   max-width: 500px;
   height: 100%;
-  max-height: 500px;
   max-height: 600px;
   border-radius: 20px;
-  background-color: rgb(250, 247, 242);
+
+  background-image: url(./1370523.png);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   overflow-y: auto;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -42,14 +48,15 @@ body {
   height: 100%;
   max-height: 130px;
   max-width: 100%;
-  background-color: pink;
+  background: rgba(255, 255, 255, 0.2);
+
+  overflow-y: auto;
   border-radius: 20px;
   padding: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 25%;
-
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
     rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
     rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
@@ -125,17 +132,19 @@ h1 {
   padding-top: 20px;
 
   row-gap: 30px;
-  font-size: 15px;
+  font-size: 20px;
   list-style: none;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   width: 100%;
   padding: 0 15px;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
 }
 .item {
   display: grid;
   grid-template-columns: 50px 1fr 20px 50px;
-
+  color: rgb(255, 255, 255);
   justify-content: flex-start;
   gap: 5px;
   max-width: 100%;
@@ -149,6 +158,7 @@ h1 {
   /* word-break: break-word;  */
   justify-items: flex-start;
   border-bottom: 1px dashed rgb(0, 0, 0);
+  color: black;
 }
 
 .item input[type="checkbox"] {
@@ -218,13 +228,11 @@ h1 {
 
 .todolist-act button:hover {
   transform: scale(1.1);
-  background: linear-gradient(90deg, rgb(216, 164, 164), rgb(243, 121, 7));
-  border-color: orange;
+  background-color: deepskyblue;
   color: white;
 }
 .todolist-act button:nth-of-type(2):hover {
-  background: linear-gradient(90deg, red, white);
-  border-color: red;
+  background-color: rgb(255, 26, 26);
 }
 .todolist-act .todolist-act button:active {
   transform: scale(0.9);
