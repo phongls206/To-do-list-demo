@@ -33,7 +33,7 @@ body {
   height: 100%;
   max-height: 600px;
   border-radius: 20px;
-
+  scrollbar-width: none;
   background-image: url(./1370523.png);
 
   background-repeat: no-repeat;
@@ -166,6 +166,7 @@ h1 {
   margin-right: 10px;
   width: fit-content;
 }
+
 .delete-btn {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #008ae6,
     0 0 30px #119dd4, 0 0 40px #10adeb, 0 0 55px #07bbdb, 0 0 75px #0850eb;
@@ -288,4 +289,8 @@ span {
       rgba(0, 0, 0, 0.09) 0px 32px 16px;
     font-size: 12px;
   }
+}
+
+::-webkit-scrollbar-track {
+  display: none;
 }
