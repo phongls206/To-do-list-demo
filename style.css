@@ -35,21 +35,40 @@ body {
   border-radius: 20px;
   scrollbar-width: none;
   background-image: url(./1370523.png);
-
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   overflow-y: auto;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  animation: uiShake 8s ease-in-out infinite alternate;
 }
 
+@keyframes uiShake {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(3px, -3px);
+  }
+  50% {
+    transform: translate(-3px, 3px);
+  }
+  75% {
+    transform: translate(1px, -1px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
 .todolist-head {
   height: 100%;
-  max-height: 130px;
+  max-height: 110px;
   max-width: 100%;
   background: rgba(255, 255, 255, 0.2);
-
+  position: sticky;
+  top: 0;
+  z-index: 999;
   overflow-y: auto;
   border-radius: 20px;
   padding: 10px;
