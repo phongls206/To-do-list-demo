@@ -136,15 +136,16 @@ btnAdd.addEventListener("click", () => {
   renderTasks();
 });
 
-// ============================
 // CLEAR TOÀN BỘ DANH SÁCH
 // ============================
 btnClear.addEventListener("click", () => {
-  savedTask = []; // Reset mảng rỗng
-  localStorage.removeItem("note"); // Xóa trong localStorage
-  renderTasks(); // Vẽ lại (ra trống)
+  const confirmDelete = confirm("Do you want clear all task?");
+  if (confirmDelete) {
+    savedTask = []; // Reset mảng rỗng
+    localStorage.removeItem("note"); // Xóa trong localStorage
+    renderTasks(); // Vẽ lại (ra trống)
+  }
 });
-
 // ============================
 // RENDER LẦN ĐẦU KHI LOAD WEB
 // ============================
