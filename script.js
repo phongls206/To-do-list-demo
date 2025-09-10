@@ -50,7 +50,7 @@ const renderTasks = () => {
     // ----- Nút Delete -----
     const deleteBtn = document.createElement("button");
     deleteBtn.className = "delete-btn";
-    deleteBtn.textContent = "x";
+    deleteBtn.textContent = "❌";
 
     // ============================
     // SỰ KIỆN CHO CHECKBOX
@@ -197,7 +197,7 @@ completed_btn.addEventListener("click", () => {
       emptyMsg.textContent = "Task Completed Is Empty!";
       emptyMsg.style.textAlign = "center";
       emptyMsg.style.fontSize = "30px";
-      emptyMsg.style.textShadow = "none";
+
       document.querySelector(".list-item").appendChild(emptyMsg);
     }
   } else {
@@ -215,6 +215,20 @@ all_btn.addEventListener("click", () => {
   if (emptyMsg) emptyMsg.remove();
 });
 // hom nay toi day thoi
+const btnMusic = document.querySelector(".PlayMusic");
+const audio = document.querySelector("audio");
+const inner = btnMusic.querySelector(".PlayMusic__inner");
+
+btnMusic.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play();
+    btnMusic.classList.add("MusicActive");
+    inner.style.animationPlayState = "running"; // chạy tiếp
+  } else {
+    audio.pause();
+    inner.style.animationPlayState = "paused"; // dừng xoay
+  }
+});
 
 /* // Mission:
 // vao web van luu task da tao | done

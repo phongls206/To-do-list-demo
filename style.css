@@ -39,10 +39,10 @@ body {
   background-size: cover;
   background-position: center;
   overflow-y: auto;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
   will-change: transform; /* báo trước cho trình duyệt */
   animation: uiShake 8s ease-in-out infinite alternate;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 @keyframes uiShake {
@@ -77,9 +77,8 @@ body {
   justify-content: space-around;
   align-items: center;
   height: 25%;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
-    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
-    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 h1 {
   position: absolute;
@@ -189,24 +188,17 @@ h1 {
 .delete-btn {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #008ae6,
     0 0 30px #119dd4, 0 0 40px #10adeb, 0 0 55px #07bbdb, 0 0 75px #0850eb;
-  font-size: 20px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  height: fit-content;
-  width: fit-content;
-  background-color: rgb(238, 0, 40);
+
+  background: none;
   border: none;
   color: rgb(255, 255, 255);
-  border-radius: 20px;
   margin-left: 20px;
   display: grid;
   text-align: center;
   position: relative;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
-    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
-    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-  transition: transform 0.3s ease;
   margin-bottom: -5px;
+  font-size: 18px;
+  transition: transform 0.2s ease;
 }
 
 .delete-btn:hover {
@@ -250,8 +242,8 @@ h1 {
   padding: 50x;
   font-size: 13px;
   transition: transform 0.3s ease;
-
   user-select: none;
+  cursor: pointer;
 }
 
 .todolist-act button:hover {
@@ -262,10 +254,9 @@ h1 {
 .todolist-act button:nth-of-type(2):hover {
   background-color: rgb(255, 26, 26);
 }
-.todolist-act .todolist-act button:active {
-  transform: scale(0.9);
+.todolist-act button:active {
+  transform: scale(0.8);
 }
-
 span {
   outline: none;
 }
@@ -319,12 +310,6 @@ span {
   scrollbar-width: none;
 }
 
-#music {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 10px;
-}
 .filter-btn {
   position: fixed;
   top: 0;
@@ -334,22 +319,30 @@ span {
 }
 .filter-btn button {
   padding: 8px;
-  text-shadow: #e0e0e0 1px 1px 0;
   border: none;
   border-radius: 99px;
   background-color: white;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
-
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   text-wrap: nowrap;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   font-size: 18px;
+  font-family: "Fredoka", "Nunito", sans-serif;
+  font-weight: 520;
+  letter-spacing: 0.5px;
+}
+.filter-btn button > :not(.rotate) {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
 }
 .filter-btn span.rotate {
   display: inline-block;
   will-change: transform;
-  animation: rotate 2s linear infinite;
+  transform-origin: center center;
+  font-size: 18px;
+  animation: rotate 2s linear infinite forwards;
+  text-shadow: none !important;
 }
 
 @keyframes rotate {
@@ -374,9 +367,8 @@ span {
   position: absolute;
   font-size: 13.8px;
   margin-top: 8px;
-  left: 5px;
-  padding: 20px;
-
+  left: -10px;
+  padding: 30px;
   background-color: white;
   border-radius: 20px;
   text-wrap: nowrap;
@@ -388,14 +380,49 @@ span {
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
   user-select: none;
-
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .filter-submenu li {
-  text-align: center;
+  position: relative;
+  text-align: left;
   transition: transform 0.2s ease-in-out;
+  padding: 8px 12px 8px 30px;
+  margin: 0;
+  white-space: nowrap;
+  width: fit-content;
 }
+.filter-submenu li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2.2px;
+  border-radius: 99px;
+  background: #3ea4e8;
+  transition: width 0.5s ease;
+}
+.filter-submenu li:hover::after {
+  width: 100%; /* chạy dài ra hết chữ */
+}
+.filter-submenu li:hover::before {
+  content: "";
+  background-image: url(./nono.svg);
+  border: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  border: 1px solid;
+  border-radius: 20px;
+  position: absolute;
+  left: -20px;
+  top: 14%;
+  transform: translateY(-50%);
+  animation: rotate 2s linear infinite;
+}
+
 .filter-btn .filter-submenu {
   display: none;
 }
@@ -406,12 +433,12 @@ span {
 }
 
 .filter-submenu li:hover {
-  text-decoration: underline;
   color: rgb(9, 172, 242);
   cursor: pointer;
   list-style: none;
   transform: scale(1.1);
 }
+
 .filter-submenu li:active {
   transform: scale(0.7);
 }
@@ -430,4 +457,62 @@ body.darkMode-active {
 }
 .hide {
   display: none;
+}
+.empty-completed {
+  text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px #eeeeee, 2px 1px 1px #cccccc,
+    1px 2px 1px #eeeeee, 3px 2px 1px #cccccc, 2px 3px 1px #eeeeee,
+    4px 3px 1px #cccccc, 3px 4px 1px #eeeeee, 5px 4px 1px #cccccc,
+    4px 5px 1px #eeeeee, 6px 5px 1px #cccccc, 5px 6px 1px #eeeeee,
+    7px 6px 1px #cccccc;
+}
+
+.PlayMusic {
+  --scale: 1;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 20px;
+  background-color: white;
+  transition: transform 0.3s ease;
+  transform: scale(var(--scale));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.PlayMusic__inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: url(./meomeo.svg);
+  background-position: center -15%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.PlayMusic:hover {
+  --scale: 1.1;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.PlayMusic:active {
+  --scale: 0.9;
+}
+.PlayMusic.MusicActive .PlayMusic__inner {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
