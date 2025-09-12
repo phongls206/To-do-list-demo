@@ -14,7 +14,7 @@ body {
   position: relative;
   max-width: 100vw;
   height: 100vh;
-  overflow: hidden;
+
   margin: 0;
   padding: 0;
   background-image: url(./doremon.webp);
@@ -468,12 +468,13 @@ body.darkMode-active {
 
 .PlayMusic {
   --scale: 1;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   position: absolute;
   right: 0;
   bottom: 0;
+
   margin: 20px;
   background-color: white;
   transition: transform 0.3s ease;

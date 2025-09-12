@@ -149,10 +149,10 @@ btnClear.addEventListener("click", () => {
 // ============================
 // RENDER LẦN ĐẦU KHI LOAD WEB
 // ============================
-// Chỉ chạy khi trang load hoàn toàn
-window.onload = () => {
-  renderTasks();
-};
+// ngon hon window onload
+document.addEventListener("DOMContentLoaded", () => {
+  renderTask();
+});
 
 // ===========================================================
 // toggle menu
