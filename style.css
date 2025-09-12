@@ -509,6 +509,38 @@ body.darkMode-active {
       rgba(0, 0, 0, 0.22) 0px 15px 12px;
     margin-bottom: 30px;
   }
+  .filter-submenu {
+    position: absolute;
+    font-size: 13.8px;
+    scale: 0.7;
+    left: -10px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 20px;
+    text-wrap: nowrap;
+    list-style: none;
+    letter-spacing: 1px;
+    display: none;
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    user-select: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  .filter-btn {
+    position: fixed;
+    top: 0;
+    right: 5px;
+    border: none;
+    padding: 10px;
+    scale: 0.8;
+  }
+  .todolist-ui {
+    scale: 0.8;
+  }
 }
 @media (max-width: 400px) {
   .todolist-ui {
@@ -542,5 +574,35 @@ body.darkMode-active {
     width: 60px;
     height: 60px;
     margin-bottom: 50px;
+  }
+
+  .filter-submenu {
+    position: absolute;
+    font-size: 13.8px;
+    scale: 0.7;
+    left: -10px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 20px;
+    text-wrap: nowrap;
+    list-style: none;
+    letter-spacing: 1px;
+    display: none;
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    user-select: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  .filter-btn {
+    position: fixed;
+    top: 0;
+    right: 5px;
+    border: none;
+    padding: 10px;
+    scale: 0.8;
   }
 }
